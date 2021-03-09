@@ -70,7 +70,7 @@ app.post<any,any,LoginArgs>('/login',
     const token = jwt.sign({ username: user.username, password: user.password } as JWTPayload, SECRET)
     return res.status(200).json({
       message: 'Login succesfully',
-      'token: ' : token,
+      token: token,
       
     })
   })
@@ -98,7 +98,7 @@ app.post<any,any,RegisterArgs>('/register',
       balance: balance,
     })
     fs.writeFileSync('db.json', JSON.stringify(db))
-    res.json({ message: 'Register sucessfully' })
+    res.json({ message: 'Register successfully' })
 
   })
 
